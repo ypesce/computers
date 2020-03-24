@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddComponent } from './components/add/add.component';
 import { EditComponent } from './components/edit/edit.component';
 import { Error404Component } from './components/error404/error404.component';
+import { DetailsComponent } from './components/details/details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { Error404Component } from './components/error404/error404.component';
     ComputersComponent,
     AddComponent,
     EditComponent,
-    Error404Component
+    Error404Component,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
