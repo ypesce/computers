@@ -1,1 +1,78 @@
-<p>add works!</p>
+<ng-container *ngIf="isLoading">
+  Laoding...
+</ng-container>
+
+<ng-container *ngIf="!isLoading">
+  <div class="container">
+    <form (ngSubmit)="add()" #form="ngForm">
+      <div class="form-group">
+        <label>Modèle</label>
+        <input #model="ngModel" id="model" name="model" type="text" class="form-control" [(ngModel)]="addComputer.model"
+          required>
+        <div [hidden]="model.valid" class="alert alert-danger">
+          Le modèle n'est pas valide...
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Marque</label>
+        <select #brand="ngModel" id="brand" name="brand" class="form-control" [(ngModel)]="addComputer.brand" required>
+          <option></option>
+          <option *ngFor="let brand of brands">
+            {{brand}}
+          </option>
+        </select>
+        <div [hidden]="brand.valid" class="alert alert-danger">
+          La marque n'est pas valide..
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Style</label>
+        <select #style="ngModel" id="style" name="style" class="form-control" [(ngModel)]="addComputer.style" required>
+          <option></option>
+          <option *ngFor="let aaaaaa of bllbl">
+            {{aaaaaa}}
+          </option>
+        </select>
+        <div [hidden]="style.valid" class="alert alert-danger">
+          Le style n'est pas valide..
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Catégorie</label>
+        <select #category="ngModel" id="category" name="category" class="form-control"
+          [(ngModel)]="addComputer.category" required>
+          <option></option>
+          <option *ngFor="let category of categories">
+            {{category}}
+          </option>
+        </select>
+        <div [hidden]="category.valid" class="alert alert-danger">
+          La catégorie n'est pas valide..
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Prix d'achat</label>
+        <input #buying="ngModel" id="buying" name="buying" type="text" class="form-control"
+          [(ngModel)]="addComputer.buyingPrice" required>
+        <div [hidden]="buying.valid" class="alert alert-danger">
+          Le modèle n'est pas valide...
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Prix de vente</label>
+        <input #selling="ngModel" id="selling" name="selling" type="text" class="form-control"
+          [(ngModel)]="addComputer.SellingPrice" required>
+        <div [hidden]="selling.valid" class="alert alert-danger">
+          Le modèle n'est pas valide...
+        </div>
+      </div>
+
+
+      <button type="submit" class="btn btn-success" [disabled]="!form.form.valid">Ajouter </button>
+
+
+    </form>
+  </div>
+
+</ng-container>

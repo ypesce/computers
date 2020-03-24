@@ -9,7 +9,8 @@ import { catchError, retry } from 'rxjs/internal/operators';
 })
 export class ComputerServiceService {
   brand: string[] = ['Dell', 'Asus', 'Acer', 'HP', 'Lenovo'];
-  bllbl: string[] = ['Portable', 'Fixe', 'Mini', 'Netbook']
+  bllbl: string[] = ['Portable', 'Fixe', 'Mini', 'Netbook'];
+  categories: string[] = ['Gaming', 'Bureautique'];
   api: string = 'http://localhost:3000/computers';
   computer: Computer;
 
@@ -50,6 +51,15 @@ export class ComputerServiceService {
       catchError(this.errors)
     );
   }
+  add(computer: Computer): Observable<Computer> {
+    computer.inStock = new Date();
+    return this.httpClient.post<Computer>(this.api, computer).pipe(
+      retry(1),
+      catchError(this.errors)
+    );
+  }
+
+
 }
 
 

@@ -18,13 +18,13 @@
       <div class="div2">{{computer.brand}} </div>
       <div class="div3">{{computer.style}} </div>
       <div class="div4"> {{computer.category}}</div>
-      <div class="div5">{{computer.buyingPrice}} </div>
-      <div class="div6"> {{computer.SellingPrice}}</div>
+      <div class="div5">{{computer.buyingPrice}}€</div>
+      <div class="div6"> {{computer.SellingPrice}}€</div>
       <div class="div7">{{computer.inStock | date: "dd/MM/yy"}} </div>
       <div class="div8">
-        <button class="btn btn-danger"> <a [routerLink]="['/edit', computer.id]">Editer</a></button>
-        <button class="btn btn-primary"> <a (click)="delete(computer)">Supprimer</a></button>
-        <button class=" btn btn-secondary"> <a [routerLink]="['/edit', computer.id]">Details</a></button>
+        <a class="btn btn-primary" [routerLink]="['/edit', computer.id]">Editer</a>
+        <a class="btn btn-secondary" (click)="delete(computer)">Supprimer</a>
+        <a class="btn btn-primary" [routerLink]="['/edit', computer.id]">Details</a>
       </div>
 
     </div>

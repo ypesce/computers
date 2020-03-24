@@ -28,7 +28,7 @@
       </div>
       <div class="form-group">
         <label>Style</label>
-        <select #style="ngModel" id="style" name="style" class="form-control" [(ngModel)]="computerToEdit.type"
+        <select #style="ngModel" id="style" name="style" class="form-control" [(ngModel)]="computerToEdit.style"
           required>
           <option></option>
           <option *ngFor="let aaaaaa of bllbl">
@@ -38,6 +38,35 @@
         <div [hidden]="style.valid" class="alert alert-danger">
           Le style n'est pas valide..
         </div>
+      </div>
+
+      <div class="form-group">
+        <label>Catégorie</label>
+        <select #category="ngModel" id="category" name="category" class="form-control"
+          [(ngModel)]="computerToEdit.category" required>
+          <option></option>
+          <option *ngFor="let category of categories">
+            {{category}}
+          </option>
+        </select>
+        <div [hidden]="category.valid" class="alert alert-danger">
+          La catégorie n'est pas valide..
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Prix d'achat</label>
+        <input #buying="ngModel" id="buying" name="buying" type="text" class="form-control"
+          [(ngModel)]="computerToEdit.buyingPrice" required>
+        <div [hidden]="buying.valid" class="alert alert-danger">
+          Le prix d'achat n'est pas valide </div>
+
+      </div>
+      <div class="form-group">
+        <label>Prix de vente</label>
+        <input #selling="ngModel" id="selling" name="selling" type="text" class="form-control"
+          [(ngModel)]="computerToEdit.SellingPrice" required>
+        <div [hidden]="selling.valid" class="alert alert-danger">
+          Le prix de vente n'est pas valide </div>
       </div>
 
 

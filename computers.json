@@ -2,7 +2,7 @@
   "computers": [
     {
       "id": 1,
-      "model": "vehuirojipzejc",
+      "model": "Oui",
       "brand": "Dell",
       "style": "Portable",
       "category": "Bureautique",
@@ -10,7 +10,7 @@
       "SellingPrice": 300.1,
       "inStock": "2012-04-23T18:25:43.511Z",
       "image": "https://i.imgur.com/juawEl2.jpg",
-      "type": "Fixe"
+      "type": "Mini"
     },
     {
       "id": 2,
@@ -23,6 +23,27 @@
       "inStock": "2012-04-23T18:25:43.511Z",
       "image": "https://i.imgur.com/juawEl2.jpg",
       "type": "Portable"
+    },
+    {
+      "type": "Fixe",
+      "brand": "Acer",
+      "model": "etrsz",
+      "category": "Gaming",
+      "buyingPrice": "440",
+      "SellingPrice": "555",
+      "inStock": "2020-03-24T15:31:27.661Z",
+      "id": 3,
+      "style": "Fixe"
+    },
+    {
+      "model": "rgegfr",
+      "brand": "Asus",
+      "style": "Mini",
+      "category": "Gaming",
+      "buyingPrice": "5555",
+      "SellingPrice": "9999",
+      "inStock": "2020-03-24T15:40:29.812Z",
+      "id": 4
     }
   ]
 }

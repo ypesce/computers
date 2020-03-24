@@ -2,7 +2,7 @@ export class Computer {
   id: number;
   model: string;
   brand: string;
-  type: string;
+  style: string;
   category: string;
   buyingPrice: number;
   SellingPrice: number;

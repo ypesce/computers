@@ -13,6 +13,7 @@ export class EditComponent implements OnInit {
   computerToEdit: Computer;
   bllbl: string[];
   brands: string[];
+  categories: string[];
   constructor(private route: ActivatedRoute,
     private computerService: ComputerServiceService, private router: Router) { }
 
@@ -22,6 +23,7 @@ export class EditComponent implements OnInit {
       .subscribe(data => {
         this.brands = this.computerService.brand;
         this.bllbl = this.computerService.bllbl;
+        this.categories = this.computerService.categories;
         this.computerToEdit = data;
         this.isLoading = false;
       });
