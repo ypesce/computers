@@ -4,13 +4,14 @@ import { ComputersComponent } from './components/computers/computers.component';
 import { EditComponent } from './components/edit/edit.component';
 import { AddComponent } from './components/add/add.component';
 import { Error404Component } from './components/error404/error404.component';
+import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/computers', pathMatch: 'full' },
   { path: 'computers', component: ComputersComponent },
   { path: 'add', component: AddComponent },
   { path: 'edit/:id', component: EditComponent },
-  // { path: 'chaussure/:id', component: ChaussureDetailComponent },
+  { path: 'computer/:id', component: DetailsComponent },
   { path: '**', component: Error404Component }
 ];
 

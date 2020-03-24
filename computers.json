@@ -25,17 +25,6 @@
       "type": "Portable"
     },
     {
-      "type": "Fixe",
-      "brand": "Acer",
-      "model": "etrsz",
-      "category": "Gaming",
-      "buyingPrice": "440",
-      "SellingPrice": "555",
-      "inStock": "2020-03-24T15:31:27.661Z",
-      "id": 3,
-      "style": "Fixe"
-    },
-    {
       "model": "rgegfr",
       "brand": "Asus",
       "style": "Mini",

@@ -1,1 +1,15 @@
-<p>details works!</p>
+<div class="container">
+  <ng-container *ngIf="isLoading">
+    Chargement en cours
+  </ng-container>
+
+  <ng-container *ngIf="!isLoading">
+    Ordinateur n°:{{computer.id}}
+    {{computer.model}}<br>
+    {{computer.brand}}<br>
+    {{computer.style}}<br>
+    {{computer.category}}<br>
+    {{computer.buyingPrice}}<br>
+    {{computer.SellingPrice}}<br>
+    {{computer.inStock}}<br>
+  </ng-container>
