@@ -8,11 +8,11 @@ import { catchError, retry } from 'rxjs/internal/operators';
   providedIn: 'root'
 })
 export class ComputerServiceService {
-  urlApi = 'http://localhost:3000/computers';
+  api = 'http://localhost:3000/computers';
 
   constructor(private httpClient: HttpClient) { }
   getAll(): Observable<Computer[]> {
-    return this.httpClient.get<Computer[]>(this.urlApi).pipe(
+    return this.httpClient.get<Computer[]>(this.api).pipe(
       retry(1),
       catchError(this.handleError)
     );
