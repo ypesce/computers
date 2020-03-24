@@ -26,21 +26,19 @@
           La marque n'est pas valide..
         </div>
       </div>
-
       <div class="form-group">
-        <label>Type</label>
-        <select #type="ngModel" id="style" name="style" class="form-control" [(ngModel)]="computerToEdit.style"
+        <label>Style</label>
+        <select #style="ngModel" id="style" name="style" class="form-control" [(ngModel)]="computerToEdit.type"
           required>
           <option></option>
-          <option *ngFor="let type of types">
-            {{type}}
+          <option *ngFor="let aaaaaa of bllbl">
+            {{aaaaaa}}
           </option>
         </select>
-        <div [hidden]="type.valid" class="alert alert-danger">
-          le type n'est pas valide
+        <div [hidden]="style.valid" class="alert alert-danger">
+          Le style n'est pas valide..
         </div>
       </div>
-
 
 
       <button type="submit" class="btn btn-success" [disabled]="!form.form.valid">Editer</button>

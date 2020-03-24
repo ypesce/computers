@@ -20,5 +20,15 @@ export class ComputersComponent implements OnInit {
     });
 
   }
+  delete(computer: Computer) {
+    this.isLoading = true;
+    this.computerService.delete(computer).subscribe(data => {
+      this.computerService.all().subscribe(computers => {
+        this.computers = computers;
+        this.isLoading = false;
+      });
+      console.log('help-me')
+    });
+  }
 
 }

@@ -2,25 +2,28 @@
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: 40px;
-  grid-column-gap: 3px;
   grid-row-gap: 50px;
   text-align: center;
   font-family: calibri;
 }
 
 img {
-  max-height: 200px;
+  max-height: 197px;
 }
 
 .parent {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: 200px;
-  grid-column-gap: 3px;
   grid-row-gap: 10px;
   text-align: center;
   font-family: calibri;
 
+}
+
+.parent div {
+  box-sizing: border-box;
+  border: 1px solid black;
 }
 
 .div1 {
@@ -87,4 +90,13 @@ img {
   flex-flow: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn {
+  width: 70%;
 }

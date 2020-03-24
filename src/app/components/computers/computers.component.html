@@ -20,10 +20,11 @@
       <div class="div4"> {{computer.category}}</div>
       <div class="div5">{{computer.buyingPrice}} </div>
       <div class="div6"> {{computer.SellingPrice}}</div>
-      <div class="div7">{{computer.inStock}} </div>
+      <div class="div7">{{computer.inStock | date: "dd/MM/yy"}} </div>
       <div class="div8">
-        <button> <a [routerLink]="['/edit', computer.id]">Editer</a></button>
-        <button>Edit</button>
+        <button class="btn btn-danger"> <a [routerLink]="['/edit', computer.id]">Editer</a></button>
+        <button class="btn btn-primary"> <a (click)="delete(computer)">Supprimer</a></button>
+        <button class=" btn btn-secondary"> <a [routerLink]="['/edit', computer.id]">Details</a></button>
       </div>
 
     </div>

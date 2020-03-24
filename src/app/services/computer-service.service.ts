@@ -9,33 +9,12 @@ import { catchError, retry } from 'rxjs/internal/operators';
 })
 export class ComputerServiceService {
   brand: string[] = ['Dell', 'Asus', 'Acer', 'HP', 'Lenovo'];
-  types: string[] = ['Portable', 'Fixe', 'Mini', 'Netbook']
+  bllbl: string[] = ['Portable', 'Fixe', 'Mini', 'Netbook']
   api: string = 'http://localhost:3000/computers';
   computer: Computer;
 
   constructor(private httpClient: HttpClient) { }
-  all(): Observable<Computer[]> {
-    return this.httpClient.get<Computer[]>(this.api).pipe(
-      retry(1),
-      catchError(this.handleError)
-    );
-  }
-  edit(computer: Computer): Observable<Computer> {
-    return this.httpClient.put<Computer>(this.api + '/' + computer.id, computer).pipe(
-      retry(1),
-      catchError(this.handleError)
-    );
-  }
-
-
-  getId(id: number): Observable<Computer> {
-    return this.httpClient.get<Computer>(this.api + '/' + id).pipe(
-      retry(1),
-      catchError(this.handleError)
-    );
-  }
-
-  handleError(error) {
+  errors(error: any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;
@@ -46,7 +25,31 @@ export class ComputerServiceService {
     return throwError(errorMessage);
   }
 
+  all(): Observable<Computer[]> {
+    return this.httpClient.get<Computer[]>(this.api).pipe(
+      retry(1),
+      catchError(this.errors)
+    );
+  }
+  edit(computer: Computer): Observable<Computer> {
+    return this.httpClient.put<Computer>(this.api + '/' + computer.id, computer).pipe(
+      retry(1),
+      catchError(this.errors)
+    );
+  }
 
+  getId(id: number): Observable<Computer> {
+    return this.httpClient.get<Computer>(this.api + '/' + id).pipe(
+      retry(1),
+      catchError(this.errors)
+    );
+  }
+  delete(computer: Computer): Observable<Computer> {
+    return this.httpClient.delete<Computer>(this.api + '/' + computer.id).pipe(
+      retry(1),
+      catchError(this.errors)
+    );
+  }
 }
 
 

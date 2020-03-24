@@ -8,13 +8,15 @@ import { ComputersComponent } from './components/computers/computers.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddComponent } from './components/add/add.component';
 import { EditComponent } from './components/edit/edit.component';
+import { Error404Component } from './components/error404/error404.component';
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ComputersComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
