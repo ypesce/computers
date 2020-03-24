@@ -1,20 +1,50 @@
 <ng-container *ngIf="isLoading">
-  Chargement en cours
+  Laoding...
 </ng-container>
 
 <ng-container *ngIf="!isLoading">
   <div class="container">
-    <form #validationForm="ngForm" (ngSubmit)="edit()">
+    <form (ngSubmit)="edit()" #form="ngForm">
       <div class="form-group">
         <label>Modèle</label>
-        <input #chaussureInput="ngModel" id="nom" name="nom" type="text" class="form-control"
+        <input #model="ngModel" id="model" name="model" type="text" class="form-control"
           [(ngModel)]="computerToEdit.model" required>
-        <div [hidden]="chaussureInput.valid" class="alert alert-danger">
-          Le modèle n'est pas valide
+        <div [hidden]="model.valid" class="alert alert-danger">
+          Le modèle n'est pas valide...
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Marque</label>
+        <select #brand="ngModel" id="brand" name="brand" class="form-control" [(ngModel)]="computerToEdit.brand"
+          required>
+          <option></option>
+          <option *ngFor="let brand of brands">
+            {{brand}}
+          </option>
+        </select>
+        <div [hidden]="brand.valid" class="alert alert-danger">
+          La marque n'est pas valide..
         </div>
       </div>
 
-      <input [disabled]="!validationForm.valid" type="submit" class="btn btn-success" value="Valider">
+      <div class="form-group">
+        <label>Type</label>
+        <select #type="ngModel" id="style" name="style" class="form-control" [(ngModel)]="computerToEdit.style"
+          required>
+          <option></option>
+          <option *ngFor="let type of types">
+            {{type}}
+          </option>
+        </select>
+        <div [hidden]="type.valid" class="alert alert-danger">
+          le type n'est pas valide
+        </div>
+      </div>
+
+
+
+      <button type="submit" class="btn btn-success" [disabled]="!form.form.valid">Editer</button>
+
 
     </form>
   </div>

@@ -1,7 +1,15 @@
 {
   "computers": [
     {
-      "id": 1
+      "id": 1,
+      "model": "Latitude 3500 - 15.6",
+      "brand": "Dell",
+      "style": "Mini",
+      "category": "Bureautique",
+      "buyingPrice": 120.88,
+      "SellingPrice": 300.1,
+      "inStock": "2012-04-23T18:25:43.511Z",
+      "image": "https://i.imgur.com/juawEl2.jpg"
     }
   ]
 }

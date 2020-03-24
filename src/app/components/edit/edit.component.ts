@@ -11,7 +11,8 @@ import { Computer } from 'src/app/models/computer';
 export class EditComponent implements OnInit {
   isLoading: boolean;
   computerToEdit: Computer;
-  brand: string[];
+  brands: string[];
+  types: string[];
   constructor(private route: ActivatedRoute,
     private computerService: ComputerServiceService, private router: Router) { }
 
@@ -19,15 +20,18 @@ export class EditComponent implements OnInit {
     this.isLoading = true;
     this.computerService.getId(+this.route.snapshot.paramMap.get('id'))
       .subscribe(data => {
-        this.brand = this.computerService.brand;
+        this.brands = this.computerService.brand;
+        this.types = this.computerService.types;
         this.computerToEdit = data;
         this.isLoading = false;
       });
 
   }
   edit() {
+    console.log('help-me')
     this.computerService.edit(this.computerToEdit).subscribe((data) => {
       this.router.navigate(['/computers']);
+      console.log('samarch ? ')
     });
 
   }

@@ -8,7 +8,8 @@ import { catchError, retry } from 'rxjs/internal/operators';
   providedIn: 'root'
 })
 export class ComputerServiceService {
-  brand: string[] = ['Dell', 'Asus', 'Acer', 'HP', 'Lenovo']
+  brand: string[] = ['Dell', 'Asus', 'Acer', 'HP', 'Lenovo'];
+  types: string[] = ['Portable', 'Fixe', 'Mini', 'Netbook']
   api: string = 'http://localhost:3000/computers';
   computer: Computer;
 
@@ -20,7 +21,7 @@ export class ComputerServiceService {
     );
   }
   edit(computer: Computer): Observable<Computer> {
-    return this.httpClient.put<Computer>(this.api + '/' + computer.id, Computer).pipe(
+    return this.httpClient.put<Computer>(this.api + '/' + computer.id, computer).pipe(
       retry(1),
       catchError(this.handleError)
     );
