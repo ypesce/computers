@@ -1,1 +1,22 @@
-<p>edit works!</p>
+<ng-container *ngIf="isLoading">
+  Chargement en cours
+</ng-container>
+
+<ng-container *ngIf="!isLoading">
+  <div class="container">
+    <form #validationForm="ngForm" (ngSubmit)="edit()">
+      <div class="form-group">
+        <label>Modèle</label>
+        <input #chaussureInput="ngModel" id="nom" name="nom" type="text" class="form-control"
+          [(ngModel)]="computerToEdit.model" required>
+        <div [hidden]="chaussureInput.valid" class="alert alert-danger">
+          Le modèle n'est pas valide
+        </div>
+      </div>
+
+      <input [disabled]="!validationForm.valid" type="submit" class="btn btn-success" value="Valider">
+
+    </form>
+  </div>
+
+</ng-container>

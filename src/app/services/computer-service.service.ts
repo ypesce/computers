@@ -8,7 +8,8 @@ import { catchError, retry } from 'rxjs/internal/operators';
   providedIn: 'root'
 })
 export class ComputerServiceService {
-  api = 'http://localhost:3000/computers';
+  brand: string[] = ['Dell', 'Asus', 'Acer', 'HP', 'Lenovo']
+  api: string = 'http://localhost:3000/computers';
   computer: Computer;
 
   constructor(private httpClient: HttpClient) { }
@@ -25,6 +26,13 @@ export class ComputerServiceService {
     );
   }
 
+
+  getId(id: number): Observable<Computer> {
+    return this.httpClient.get<Computer>(this.api + '/' + id).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
 
   handleError(error) {
     let errorMessage = '';
