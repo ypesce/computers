@@ -1,14 +1,13 @@
 {
-  "computers": [
-    {
-      "id": 1,
-      "model": "Latitude 3500 - 15.6",
-      "brand": "Dell",
-      "type": "Portable",
-      "category": "Bureautique",
-      "buyingPrice": 120.88,
-      "SellingPrice": 300.10,
-      "inStock": "2012-04-23T18:25:43.511Z"
-    }
-  ]
+  "computers": [{
+    "id": 1,
+    "model": "Latitude 3500 - 15.6",
+    "brand": "Dell",
+    "style": "Portable",
+    "image": "https://i.imgur.com/PeBdHzD.jpg",
+    "category": "Bureautique",
+    "buyingPrice": 120.88,
+    "SellingPrice": 300.10,
+    "inStock": "2012-04-23T18:25:43.511Z"
+  }]
 }

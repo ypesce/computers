@@ -1,0 +1,30 @@
+<ng-container *ngIf="isLoading">
+  Loading....
+</ng-container>
+<ng-container *ngIf="!isLoading">
+  <div class="headerparent">
+    <div class="div1"> Modèle</div>
+    <div class="div2"> Marque</div>
+    <div class="div3">Type de machine </div>
+    <div class="div4"> Catégorie</div>
+    <div class="div5">Prix achat </div>
+    <div class="div6">Prix vente </div>
+    <div class="div7"> Date d'entrée en stock</div>
+    <div class="div9">Actions</div>
+  </div>
+  <div class="header" *ngFor="let computer of computers">
+    <div class="parent">
+      <div class="div1"> {{computer.model}}<img src="{{computer.image}}"></div>
+      <div class="div2">{{computer.brand}} </div>
+      <div class="div3">{{computer.style}} </div>
+      <div class="div4"> {{computer.category}}</div>
+      <div class="div5">{{computer.buyingPrice}} </div>
+      <div class="div6"> {{computer.SellingPrice}}</div>
+      <div class="div7">{{computer.inStock}} </div>
+      <div class="div8">
+        <button> <a [routerLink]="['/edit', computer.id]">Editer</a></button>
+        <button>Edit</button>
+      </div>
+
+    </div>
+  </div>

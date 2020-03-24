@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Computer } from "../computer";
+import { Computer } from '../models/computer';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/internal/operators';
@@ -9,14 +9,22 @@ import { catchError, retry } from 'rxjs/internal/operators';
 })
 export class ComputerServiceService {
   api = 'http://localhost:3000/computers';
+  computer: Computer;
 
   constructor(private httpClient: HttpClient) { }
-  getAll(): Observable<Computer[]> {
+  all(): Observable<Computer[]> {
     return this.httpClient.get<Computer[]>(this.api).pipe(
       retry(1),
       catchError(this.handleError)
     );
   }
+  edit(computer: Computer): Observable<Computer> {
+    return this.httpClient.put<Computer>(this.api + '/' + computer.id, Computer).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
+
 
   handleError(error) {
     let errorMessage = '';

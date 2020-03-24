@@ -1,10 +1,11 @@
 export class Computer {
   id: number;
-  model:string;
+  model: string;
   brand: string;
   style: string;
+  image: string;
   category: string;
   buyingPrice: number;
-  SellingPrice: numb;
+  SellingPrice: number;
   inStock: Date;
 }
